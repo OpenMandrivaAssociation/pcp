@@ -1,9 +1,10 @@
 %define name	pcp	
 %define	version	0.3.3
-%define release	1mdk
+%define release	%mkrel 2
 %define lib_name_orig	lib%{name}
 %define lib_major 0
 %define lib_name %mklibname %{name} %{lib_major}
+%define develname %mklibname -d %{name}
 
 Summary:  	PCP is a tool for replicating files on multiple nodes of a PC cluster	
 Name:		%{name}
@@ -18,14 +19,15 @@ Source2:	README.pcp
 Patch0:		pcp-Makefile.in.patch
 Requires:	openssh-clients, openssh-server, authd >= 0.2, xinetd, tftp
 Provides:	%{name}-%{version}
-Buildrequires:	libe-devel >= 0.2.1, %{mklibname authd0}-devel >= 0.2
+Buildrequires:	libe-devel >= 0.2.1, authd-devel >= 0.2
 Buildrequires:	openssl-devel
 #Packager:       Antoine Ginies <aginies@mandrakesoft.com>
 BuildRoot:	%{_tmppath}/%{name}-%{version}
 
-%package	-n %{lib_name}-devel
+%package	-n %{develname}
 Summary:        Pcp devel package
 Provides:       %{name}-devel-%{version}
+Obsoletes:	%{lib_name}-devel
 Group:          Development/Other
 
 %description
@@ -35,7 +37,7 @@ parallelized, pipelined data transfers which use RSA authentication.
 For large file transfers or replication on many nodes, pcp provides highly 
 efficient data transfers when compared to existing alternatives (e.g. NFS).
 
-%description -n %{lib_name}-devel
+%description -n %{develname}
 pcp devel package.
 
 %prep
@@ -78,7 +80,7 @@ service xinetd condrestart
 %{_bindir}/pcp
 %{_sbindir}/pcpd
 
-%files -n %{lib_name}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %doc INSTALL AUTHORS ChangeLog
 %{_includedir}/pcp_lib.h

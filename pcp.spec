@@ -21,7 +21,6 @@ Requires:	openssh-clients, openssh-server, authd >= 0.2, xinetd, tftp
 Provides:	%{name}-%{version}
 Buildrequires:	libe-devel >= 0.2.1, authd-devel >= 0.2
 Buildrequires:	openssl-devel
-BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %package	-n %{develname}
 Summary:        Pcp devel package

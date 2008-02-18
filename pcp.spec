@@ -6,7 +6,7 @@
 %define lib_name %mklibname %{name} %{lib_major}
 %define develname %mklibname -d %{name}
 
-Summary:  	PCP is a tool for replicating files on multiple nodes of a PC cluster	
+Summary:  	Tool for replicating files on multiple nodes of a PC cluster	
 Name:		%{name}
 Version:	%{version}
 Release:	%{release}

@@ -42,7 +42,7 @@ pcp devel package.
 %prep
 %setup -q
 %patch0 -p0 -b .patch
-cp %{SOURCE2} $RPM_BUILD_DIR/%{name}-%{version}/README
+cp %{SOURCE2} %{_builddir}/%{name}-%{version}/README
 
 %build
 %configure 

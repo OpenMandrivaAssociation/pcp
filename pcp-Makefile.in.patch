@@ -1,0 +1,13 @@
+--- Makefile.in	Fri Mar 22 08:57:14 2002
++++ Makefile.in	Tue Apr 16 14:37:28 2002
+@@ -482,9 +482,7 @@
+ 
+ 
+ install-data-local: $(EXTRA_DIST)
+-	$(INSTALL_DATA) config/pcpd /etc/xinetd.d/pcpd
+-	@echo "Sending SIGUSR2 to xinetd"
+-	kill -USR2 `cat /var/run/xinetd.pid`
++	echo "solving problem of compil"
+ 
+ uninstall-local: $(EXTRA_DIST)
+ 	if [ -f /etc/xinetd.d/pcpd ]; then   \

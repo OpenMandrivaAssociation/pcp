@@ -12,7 +12,7 @@ Version:	%{version}
 Release:	%{release}
 License:	GPL
 Group:		Networking/File transfer
-URL:		http://www.cs.berkeley.edu/~bnc/pcp/
+URL:		https://www.cs.berkeley.edu/~bnc/pcp/
 Source:		%{name}-%{version}.tar.bz2
 Source1:	pcpd
 Source2:	README.pcp
